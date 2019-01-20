@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Alert, AppRegistry, Button, Platform, StyleSheet, View } from 'react-native';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 export default class ButtonBasics extends Component {
   _onPressButton() {
@@ -31,6 +32,12 @@ export default class ButtonBasics extends Component {
     );
   }
 }
+
+const AppNavigator = createStackNavigator({
+  Home: {
+    screen: HomeScreen
+  }
+});
 
 const styles = StyleSheet.create({
   container: {
