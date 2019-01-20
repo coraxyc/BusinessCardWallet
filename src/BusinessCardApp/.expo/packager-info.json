@@ -1,9 +1,9 @@
 {
   "expoServerPort": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null,
-  "devToolsPort": 19003,
+  "expoServerNgrokUrl": "https://wj-tu2.anonymous.businesscardapp.exp.direct",
+  "packagerNgrokUrl": "https://packager.wj-tu2.anonymous.businesscardapp.exp.direct",
+  "ngrokPid": 2918,
+  "devToolsPort": 19002,
   "packagerPort": null,
   "packagerPid": null
 }

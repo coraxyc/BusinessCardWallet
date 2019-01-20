@@ -4,9 +4,9 @@ import { StyleSheet, Text, TextInput, View} from 'react-native';
 export default class ContactsScreen extends React.Component {
   render() {
     return (
-      <View>
+      <View style={styles.container}>
         <Text style={styles.information}>Contacts</Text>
-        <View style={styles.underline}/>
+        <Text style={styles.search}> Search ... </Text>
         <Text style={styles.searchItem}>Jane Doe</Text>
         <View style={styles.underline}/>
         <Text style={styles.searchItem}>John Doe</Text>
@@ -18,11 +18,28 @@ export default class ContactsScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  information: {
+  container: {
     paddingLeft: 30,
     paddingTop: 30,
+  },
+
+  search: {
+    paddingLeft: 30,
+    paddingTop: 10,
+    paddingBottom: 10,
+    marginRight: 30,
+    borderRadius: 10,
+    borderWidth: 2,
+    borderColor: 'lightgrey',
+    color: 'lightgrey',
+    fontSize: 20,
+    marginBottom: 30,
+  },
+
+  information: {
     fontSize: 40,
     fontWeight: 'bold',
+    marginBottom: 20,
   },
 
   searchItem: {
