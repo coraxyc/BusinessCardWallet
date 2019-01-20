@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { StyleSheet, Text, TextInput, View} from 'react-native';
 
 // import styles from '../constants/Styles.js'
 //This is the myCard screen
@@ -22,7 +22,9 @@ export default class MyCardScreen extends React.Component {
         <Text style={styles.titleText}>{this.state.titleText}</Text>
         <View>
           <Text style={styles.fieldTitle}>Name</Text>
-          <Text style={styles.fieldBody}>{this.state.nameText}</Text>
+          <Text style={styles.fieldBody}>Jane Doe</Text>
+          {/* TODO Make text editable */}
+
         </View>
         <View>
           <Text style={styles.fieldTitle}>Occupation</Text>

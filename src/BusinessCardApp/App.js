@@ -6,6 +6,7 @@ import { createStackNavigator, createAppContainer } from 'react-navigation';
 import styles from './constants/Styles.js'
 import MyCardScreen from './screens/MyCardScreen.js'
 import CameraScreen from './screens/CameraScreen.js'
+import ContactsScreen from './screens/ContactsScreen.js'
 //This is the home screen
 class HomeScreen extends React.Component {
   render() {
@@ -25,7 +26,7 @@ class HomeScreen extends React.Component {
         </View>
         <View style={styles.buttonContainer}>
           <Button
-            onPress= {() => {Alert.alert('You tapped the button!')}}
+            onPress={() => this.props.navigation.navigate('Contacts')}
             title="Contacts"
           />
         </View>
@@ -39,7 +40,8 @@ const RootStack = createStackNavigator(
   {
     Home: HomeScreen,
     MyCard: MyCardScreen,
-    Camera: CameraScreen
+    Camera: CameraScreen,
+    Contacts: ContactsScreen,
   },
   {
     initialRouteName: 'Home',
