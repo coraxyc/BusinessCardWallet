@@ -5,7 +5,7 @@ import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 import styles from './constants/Styles.js'
 import MyCardScreen from './screens/MyCardScreen.js'
-import CameraScreen from './screens/CameraScreen.js'
+import CameraScreen from './screens/CameraScreen2.js'
 import ContactsScreen from './screens/ContactsScreen.js'
 //This is the home screen
 class HomeScreen extends React.Component {
