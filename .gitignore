@@ -1,4 +1,5 @@
 src/api_key.js
+src/BusinessCardApp/.expo/*
 package-lock.json
 node_modules/*
 src/BusinessCardApp/node_modules

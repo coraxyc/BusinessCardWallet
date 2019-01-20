@@ -48,6 +48,24 @@ export default class CameraScreen extends React.Component {
                   {' '}Flip{' '}
                 </Text>
               </TouchableOpacity>
+              <TouchableOpacity
+                style={{
+                  flex: 1,
+                  alignSelf: 'flex-end',
+                  alignItems: 'center',
+                }}
+                onPress={() => {
+                  this.setState({
+                    type: this.state.type === Camera.Constants.Type.back
+                      ? Camera.Constants.Type.front
+                      : Camera.Constants.Type.back,
+                  });
+                }}>
+                  <Button
+                    style={{ fontSize: 18, marginBottom: 10, color: 'white', backgroundColor: 'blue', height: '60px', width: '280px' }}
+                    title="Capture">
+                  </Button>
+                </TouchableOpacity>
             </View>
           </Camera>
         </View>
