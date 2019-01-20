@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Alert, AppRegistry, Button, Platform, StyleSheet, View } from 'react-native';
-
+import { createStackNavigator, createAppContainer } from "react-navigation";
 
 export default class ButtonBasics extends Component {
   _onPressButton() {
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
    justifyContent: 'center',
   },
   buttonContainer: {
-    backgroundColor: Platform.OS === 'ios' ? 'blue' : 'white',
+    backgroundColor: Platform.OS === 'ios' ? 'aliceblue' : 'white',
     borderRadius: 20,
     margin: 60,
     padding: 10
