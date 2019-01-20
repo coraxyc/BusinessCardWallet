@@ -1,9 +1,10 @@
 import React from 'react';
 import { Alert, AppRegistry, Button, Platform, StyleSheet, Text,
   TouchableOpacity, View } from 'react-native';
-import { createStackNavigator, createAppContainer } from 'react-navigation'; 
+import { createStackNavigator, createAppContainer } from 'react-navigation';
 import { Camera, Permissions } from 'expo';
 
+import MyCardScreen from './MyCardScreen.js'
 //This is the home screen
 class HomeScreen extends React.Component {
   render() {
@@ -27,17 +28,6 @@ class HomeScreen extends React.Component {
             title="Contacts"
           />
         </View>
-      </View>
-    );
-  }
-}
-
-//This is the myCard screen
-class MyCardScreen extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>My Card</Text>
       </View>
     );
   }
@@ -129,4 +119,3 @@ const styles = StyleSheet.create({
     padding: 10
   },
 });
-
