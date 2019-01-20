@@ -1,8 +1,9 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 
+import styles from '../constants/Styles.js'
 //This is the myCard screen
-class MyCardScreen extends React.Component {
+export default class MyCardScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
