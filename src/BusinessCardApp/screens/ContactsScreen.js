@@ -6,6 +6,12 @@ export default class ContactsScreen extends React.Component {
     return (
       <View>
         <Text style={styles.information}>Contacts</Text>
+        <View style={styles.underline}/>
+        <Text style={styles.searchItem}>Jane Doe</Text>
+        <View style={styles.underline}/>
+        <Text style={styles.searchItem}>John Doe</Text>
+        <View style={styles.underline}/>
+        <Text style={styles.searchItem}>Jay Doe</Text>
       </View>
     );
   }
@@ -17,5 +23,17 @@ const styles = StyleSheet.create({
     paddingTop: 30,
     fontSize: 40,
     fontWeight: 'bold',
+  },
+
+  searchItem: {
+    fontSize: 20,
+    marginBottom: 10,
+  },
+
+  underline: {
+    borderBottomColor: 'lightgrey',
+    borderBottomWidth: 1,
+    marginRight:30,
+    marginBottom: 30,
   },
 });
