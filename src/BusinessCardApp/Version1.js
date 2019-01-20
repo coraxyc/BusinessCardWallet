@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
    justifyContent: 'center',
   },
   buttonContainer: {
-    backgroundColor: Platform.OS === 'ios' ? 'aliceblue' : 'blue',
+    backgroundColor: Platform.OS === 'ios' ? 'blue' : 'white',
     borderRadius: 20,
     margin: 60,
     padding: 10
