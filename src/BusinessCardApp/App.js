@@ -1,30 +1,27 @@
-import React, { Component } from 'react';
-import { Alert, AppRegistry, Button, Platform, StyleSheet, View } from 'react-native';
-import { createStackNavigator, createAppContainer } from "react-navigation";
+import React from 'react';
+import { Alert, AppRegistry, Button, Platform, StyleSheet, Text, View } from 'react-native';
+import { createStackNavigator, createAppContainer } from 'react-navigation'; 
 
-export default class ButtonBasics extends Component {
-  _onPressButton() {
-    Alert.alert('You tapped the button!')
-  }
-
+//This is the home screen
+class HomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
         <View style={styles.buttonContainer}>
           <Button
-            onPress={this._onPressButton}
+            onPress= {() => {Alert.alert('You tapped the button!')}}
             title="New Business Card"
           />
         </View>
         <View style={styles.buttonContainer}>
           <Button
-            onPress={this._onPressButton}
+            onPress={() => this.props.navigation.navigate('MyCard')}
             title="My Business Card"
           />
         </View>
         <View style={styles.buttonContainer}>
           <Button
-            onPress={this._onPressButton}
+            onPress= {() => {Alert.alert('You tapped the button!')}}
             title="Contacts"
           />
         </View>
@@ -33,10 +30,41 @@ export default class ButtonBasics extends Component {
   }
 }
 
+//This is the myCard screen
+class MyCardScreen extends React.Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text>My Card</Text>
+      </View>
+    );
+  }
+}
+
+//This defines names for the screens
+const RootStack = createStackNavigator(
+  {
+    Home: HomeScreen,
+    MyCard: MyCardScreen,
+  },
+  {
+    initialRouteName: 'Home',
+  }
+);
+
+const AppContainer = createAppContainer(RootStack);
+
+export default class App extends React.Component {
+  render() {
+    return <AppContainer />;
+  }
+}
+
 const styles = StyleSheet.create({
   container: {
-   flex: 1,
-   justifyContent: 'center',
+    alignItems: 'center',
+    flex: 1,
+    justifyContent: 'center',
   },
   buttonContainer: {
     backgroundColor: Platform.OS === 'ios' ? 'aliceblue' : 'white',
@@ -46,5 +74,3 @@ const styles = StyleSheet.create({
   },
 });
 
-// skip this line if using Create React Native App
-AppRegistry.registerComponent('AwesomeProject', () => ButtonBasics);
