@@ -2,3 +2,10 @@ src/api_key.js
 package-lock.json
 node_modules/*
 src/BusinessCardApp/node_modules
+node_modules/**/*
+.expo/*
+npm-debug.*
+*.jks
+*.p12
+*.key
+*.mobileprovision
