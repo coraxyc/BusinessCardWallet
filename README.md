@@ -14,8 +14,10 @@ https://www.npmjs.com/package/react-native-camera
 ## Download the Expo app for iOS or Android
 https://expo.io/tools
 
-## Install somethings for camera
+## Install camera options
+```
 npm i react-native-is-iphonex
+```
 
 Navigate to 
 ```

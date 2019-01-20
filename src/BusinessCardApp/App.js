@@ -20,7 +20,15 @@ class HomeScreen extends React.Component {
         </View>
         <View style={styles.buttonContainer}>
           <Button
-            onPress={() => this.props.navigation.navigate('MyCard')}
+            onPress={() => {this.props.navigation.navigate('MyCard', {
+                titleText: "My Card",
+                nameText: "Jane Doe",
+                occupationText: "Analyst",
+                companyText: "ABC Inc.",
+                phoneNumberText: "123-456-7890",
+                emailText: "jdoe@abc.xyz",
+              });
+            }}
             title="My Business Card"
           />
         </View>
@@ -33,6 +41,15 @@ class HomeScreen extends React.Component {
       </View>
     );
   }
+}
+
+const myCardInfo = {
+  titleText: "My Card",
+  nameText: "Jane Doe",
+  occupationText: "Analyst",
+  companyText: "ABC Inc.",
+  phoneNumberText: "123-456-7890",
+  emailText: "jdoe@abc.xyz",
 }
 
 //This defines names for the screens
