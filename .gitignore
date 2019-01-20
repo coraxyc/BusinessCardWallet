@@ -1,3 +1,7 @@
 src/api_key.js
+<<<<<<< HEAD
 package-lock.json
 node_modules/*
+=======
+src/BusinessCardApp/node_modules
+>>>>>>> 3f91efb6be19ccbca472c3ca457d873773f244d5
