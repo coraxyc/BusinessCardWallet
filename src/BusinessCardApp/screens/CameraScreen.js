@@ -14,6 +14,20 @@ export default class CameraScreen extends React.Component {
     this.setState({ hasCameraPermission: status === 'granted' });
   }
 
+  takePicture = () => {
+    if (this.camera) {
+      this.camera.takePictureAsync({ onPictureSaved: this.onPictureSaved });
+    }
+  };
+
+  onPictureSaved = async photo => {
+    await FileSystem.moveAsync({
+      from: photo.uri,
+      to: `${FileSystem.documentDirectory}photos/${Date.now()}.jpg`,
+    });
+    this.setState({ newPhotos: true });
+  }
+
   render() {
     const { hasCameraPermission } = this.state;
     if (hasCameraPermission === null) {
@@ -23,7 +37,9 @@ export default class CameraScreen extends React.Component {
     } else {
       return (
         <View style={{ flex: 1 }}>
-          <Camera style={{ flex: 1 }} type={this.state.type}>
+          <Camera 
+            ref={ref => {this.camera = ref;}}
+            style={{ flex: 1 }} type={this.state.type}>
             <View
               style={{
                 flex: 1,
@@ -36,13 +52,9 @@ export default class CameraScreen extends React.Component {
                   alignSelf: 'flex-end',
                   alignItems: 'center',
                 }}
-                onPress={() => {
-                  this.setState({
-                    type: this.state.type === Camera.Constants.Type.back
-                      ? Camera.Constants.Type.front
-                      : Camera.Constants.Type.back,
-                  });
-                }}>
+                onPress={() => 
+                  this.takePicture
+                }>
                 <Text
                   style={{ fontSize: 18, marginBottom: 10, color: 'white' }}>
                   {' '}Flip{' '}
